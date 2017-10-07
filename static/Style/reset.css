@@ -1,0 +1,28 @@
+﻿
+/*初始化css页面*/
+body {margin:0px;padding:0px;font-family: "Microsoft YaHei","Arial","黑体","宋体",sans-serif;font-size:14px;}
+div {
+    margin: 0px;padding: 0px;
+}
+p {
+    margin:0px;padding:0px;
+}
+ul {
+    margin:0px;padding:0px;
+}
+li {
+    margin:0px;padding:0px;
+    list-style:none;
+}
+img {
+    margin:0px;padding:0px;
+}
+a {
+    text-decoration:none;
+}
+input,select,textarea { 
+margin:0px;padding:0px;
+}
+h1, h2, h3, h4, h5 {
+    margin:0px;padding:0px;font-weight:normal;
+}

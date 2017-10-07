@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="user.master.cs" Inherits="master_user" %>
+
+<%@ Register src="~/master/right2.ascx" tagname="Right" tagprefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link type="text/css" href="<%=ResolveUrl("~/Static/Style/reset.css") %>" rel="stylesheet" />
+    <link type="text/css" href="<%=ResolveUrl("~/Static/Style/web.css") %>" rel="stylesheet" />
+    <link  rel="stylesheet" type="text/css"href="<%=ResolveUrl("~/Static/Style/xiala.css") %>" />
+    <link type="text/css" href="<%=ResolveUrl("~/Static/Style/profile.css") %>" rel="stylesheet" />
+    <script type="text/javascript" src="<%=ResolveUrl("~/Static/Script/jquery.js") %>"></script>
+
+    <script type="text/javascript" src="<%=ResolveUrl("~/Static/Script/jquery-3.1.0.min.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Static/Script/uploadify/jquery.uploadify.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Static/Script/uploadify/jquery.uploadify.min.js")%>"></script>
+    <link  href="<%=ResolveUrl("~/Static/Script/uploadify/uploadify.css")%>" />
+
+    <style type="text/css">        
+        
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <form id="form1" runat="server" method="post">
+        <div class="header1">
+        <div class="header">
+            <div class="header_left">
+                <img  alt="首页" src="../static/image/logo1.png" />
+                <h1 > 欢迎访问</h1>
+            </div>
+            
+            <div class="header_right">
+                <%if (Session["loginid"] == null)
+                  {
+                %>
+                <a class="header_right1" href="../register.aspx" target="_blank" title="注册">注册</a>
+                <a class="header_right1" href="../login.aspx" target="_blank" title="登录">登录</a>
+
+                <%}%>
+                <%else
+                  {%>
+                <nav class="nav1">
+  <ul class="nav_menu">
+    <li class="nav_menu-item"><a  class="nav_menu-item_a" href="/profile.aspx" target="_blank" >欢迎！<%=Session["loginid"] %></a>
+      <ul class="nav_submenu">
+
+        <li class="nav_submenu-item"> <a href="../user/myblog.aspx" >博客管理</a></li>
+        <li class="nav_submenu-item"> <a href="../user/writeblog.aspx" >写博客</a></li>
+		
+		<li class="nav_submenu-item"> <a href="/profile.aspx" >个人中心</a></li>
+        <li class="nav_submenu-item"> <a href="../logout.aspx"  >退出</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+                <% }
+                %>
+            </div>
+
+
+            
+        </div>
+        </div>
+        <div class="header2">
+        <div class="nav">
+            <ul>
+                <asp:Repeater ID="Navigation" runat="server">
+                    <ItemTemplate>
+                        <li><a href="<%#Eval("NavUrl") %>" target="<%#Eval("Target") %>"><%#Eval("NavText") %></a></li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+        </div>
+        </div>
+                   
+        <div class="mainpage">
+            <div class="pro-top">
+            <h2>资料设置</h2>
+        </div>
+
+
+
+
+        
+
+            <div class="pro-bottom-top">
+                <h3><a href="<%=ResolveUrl("~/profile.aspx")%>">基本信息</a></h3>
+                <h3><a href="<%=ResolveUrl("~/user/password.aspx")%>">账号安全</a></h3>
+                </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+            
+
+        </div>
+        
+    <div id="footer">
+        谢庆贺：山东<br />备案/许可证编号为：鲁ICP备<a target="_blank" href="http://www.miitbeian.gov.cn/">16006401</a>号
+    </div>
+        
+    </form>
+
+</body>
+</html>

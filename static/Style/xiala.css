@@ -1,0 +1,54 @@
+/* 下拉框的实现*/
+
+
+
+.nav1 {
+  width: 100px;
+  margin: 0 auto;
+  background: #1e8449;/*#1e8449*/
+  color: #f0f0f0;
+}
+.nav1 a {
+    color:#f0f0f0;
+  display: block;
+  text-align:center;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.nav_menu {
+  line-height: 40px;
+}
+.nav_menu-item a{
+    width:100px;
+}
+.nav_menu-item {
+  display: inline-block;
+  position: relative;
+}
+
+
+.nav_menu-item:hover {
+  background-color:#1e8449;/*#1e8449*/
+}
+.nav_menu-item:hover .nav_submenu {
+  display: block;
+}
+.nav_submenu {
+  font-weight: 300;
+  text-transform: none;
+  display: none;
+  position: absolute;
+  width: 100px;
+  background-color: #1e8449;/*#1e8449*/
+}
+
+.nav_submenu-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.nav_menu-item_a {
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis; /*文字隐藏后添加省略号*/
+    white-space: nowrap; /*强制不换行*/
+    width: 20em; /*不允许出现半汉字截断*/
+}
